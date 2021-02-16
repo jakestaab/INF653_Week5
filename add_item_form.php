@@ -26,7 +26,7 @@
         <h1>Add Item</h1>
         <section>
             <div class="additem">
-            <form action="add_product.php" method="POST">
+            <form action="add_item.php" method="POST">
 
                 <label>Category:</label>
                 <select name="category_id">

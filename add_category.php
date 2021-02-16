@@ -16,4 +16,4 @@ if ($category_name) {
 
 $updated = true;
 
-include('index.php');
+include('add_category_form.php');

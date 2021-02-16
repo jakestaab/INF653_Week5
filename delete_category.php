@@ -3,7 +3,7 @@ require('database.php');
 
 $category_id = filter_input(INPUT_POST, 'category_id', FILTER_VALIDATE_INT);
 
-if ($itemnum) {
+if ($category_id) {
     $query = 'DELETE FROM categories
                 WHERE categoryID = :category_id';
     $statement = $db->prepare($query);
@@ -14,4 +14,4 @@ if ($itemnum) {
 
 $deleted = true;
 
-include('index.php');
+include('add_category_form.php');
