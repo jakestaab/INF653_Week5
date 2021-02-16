@@ -1,0 +1,75 @@
+
+main {
+    font-family: arial;
+}
+
+.delete {
+    font-style: bold;
+    font-size: 125%;
+    color: red;
+    padding: 6px;
+    border: none;
+    background: none;
+}
+
+.add {
+    background-color: rgb(44, 52, 168);
+    color: white;
+    height: 50px;
+}
+
+.title {
+    font-weight: bold;
+    font-size: 115%;
+}
+
+.desc {
+    color: grey;
+}
+
+table {
+    table-layout: fixed;
+    width: 75%;
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+tr {
+    width: 55%;
+    border: solid;
+    border-width: 1px 0;
+}
+
+td {
+    text-align: right;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 4px;
+}
+
+table td:first-child {
+    width: 90%;
+    text-align: left;
+}
+
+.additem {
+    padding-top: 30px;
+}
+
+.listlabel {
+    color: rgb(44, 52, 168);
+    font-weight: bold;
+    font-size: 175%;
+}
+
+.addlabel {
+    color: rgb(177, 97, 32);
+    font-weight: bold;
+    font-size: 150%;
+}
+
+#newitems {
+    height: 30px;
+    width: 74%;
+    margin-bottom: 10px;
+}
