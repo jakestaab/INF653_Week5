@@ -32,10 +32,13 @@
                         $itemnum = $result['ItemNum'];
                         $title = $result['Title'];
                         $description = $result['Description'];
+                        $category = $result['categoryID'];
                     ?>
                     <tr>
-                        <td><span class="title"><?php echo $title; ?></span>
-                            <div><?php echo $description; ?></div></td>
+                        <td></td>
+                        <td><?php echo $title; ?></td>
+                        <td><?php echo $description; ?></td>
+                        <td><?php echo $category; ?></td>
                         <td><form action="delete_product.php" method="POST">
                             <input type="hidden" name="itemnum" value="<?php echo $itemnum ?>">
                             <button class="delete">&#10006</button>
@@ -49,6 +52,7 @@
         <?php } ?>
 
         <p><a href="add_product_form.php">Add Product</a></p>
+        <p><a href="add_category_form.php">View/Edit Categories</a></p>
 
     </main>
 </body>

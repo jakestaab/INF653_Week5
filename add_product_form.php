@@ -21,9 +21,9 @@
     <link rel="stylesheet" type="text/css" href="css/main.css">
 </head>
 <body>
-    <header><h1>Product Manager</h1></header>
+    <header><h1>My ToDo List</h1></header>
     <main>
-        <h1>Add Product</h1>
+        <h1>Add Item</h1>
         <section>
             <div class="additem">
             <form action="add_product.php" method="POST">
