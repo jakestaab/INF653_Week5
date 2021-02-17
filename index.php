@@ -19,11 +19,20 @@ if ($action == 'list_items') {
     include('view/item_list.php');
 } else if ($action == 'delete_item') {
     $itemnum = filter_input(INPUT_POST, 'itemnum', FILTER_VALIDATE_INT);
-    $category_id = filter_input(INPUT_POST, 'itemnum', FILTER_VALIDATE_INT);
-    if ($category_id == NULL || $category_id == FALSE || $itemnum == NULL || $itemnum == FALSE) {
-        $error = "Missing or incorrect item number or category id.";
-    } else {
-        delete_item($itemnum);
-        header("Location: .?category_id=$category_id");
+    delete_item($itemnum);
+    header("Location: .?category_id=$category_id");
+
+} else if ($action == 'show_add_form') {
+    $categories = get_categories();
+    include('./view/add_item_form.php');
+} else if ($action == 'add_item') {
+    $category_id = filter_input(INPUT_POST, 'category_id', FILTER_VALIDATE_INT);
+    $title = filter_input(INPUT_POST, "title", FILTER_SANITIZE_STRING);
+    $description = filter_input(INPUT_POST, "description", FILTER_SANITIZE_STRING);
+    if ($category_id == NULL || $category_id == FALSE || $title == NULL || $description == NULL) {
+        $error = "Invalid item inputs. Check all fields and try again.";
+        include('./errors/error.php');
     }
+    add_item($category_id, $title, $description);
+    header("Location: .?category_id=&category_id");
 }

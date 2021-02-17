@@ -34,7 +34,7 @@
     <p>There are no items on the ToDo List.</p>
 <?php } ?>
 
-<p><a href="add_item_form.php">Add Item</a></p>
+<p><a href="?action=show_add_form">Add Item</a></p>
 <p><a href="add_category_form.php">View/Edit Categories</a></p>
 </main>
 <?php include 'footer.php'; ?>
