@@ -31,8 +31,25 @@ if ($action == 'list_items') {
     $description = filter_input(INPUT_POST, "description", FILTER_SANITIZE_STRING);
     if ($category_id == NULL || $category_id == FALSE || $title == NULL || $description == NULL) {
         $error = "Invalid item inputs. Check all fields and try again.";
-        include('./errors/error.php');
+        //include('./errors/error.php');
+    } else {
+        add_item($category_id, $title, $description);
+        header("Location: .?category_id=&category_id");
     }
-    add_item($category_id, $title, $description);
-    header("Location: .?category_id=&category_id");
+} else if ($action == 'show_category_form') {
+    $categories = get_categories();
+    include('./view/category_list.php');
+} else if ($action == 'add_category') {
+    $category_name = filter_input(INPUT_POST, 'category_name', FILTER_SANITIZE_STRING);
+    if ($category_name == FALSE || $category_name == NULL) {
+        $error = "Invalid category name. Please try again.";
+        //include('./errors/error.php');
+    } else {
+        add_category($category_name);
+        header("Location: .?category_id=$category_id");
+    }
+} else if ($action == 'delete_category') {
+    $category_id = filter_input(INPUT_POST, 'category_id', FILTER_VALIDATE_INT);
+    delete_category($category_id);
+    header("Location: .?category_id=$category_id");
 }

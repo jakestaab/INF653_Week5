@@ -4,7 +4,8 @@ function get_items_by_category($category_id) {
     global $db;
     $query = 'SELECT * FROM todoitems
                     INNER JOIN categories
-                    ON todoitems.categoryID = categories.categoryID';
+                    ON todoitems.categoryID = categories.categoryID
+                    ORDER BY ItemNum ASC';
     $statement = $db->prepare($query);
     $statement->bindValue(':category_id', $category_id);
     $statement->execute();

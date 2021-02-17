@@ -35,6 +35,6 @@
 <?php } ?>
 
 <p><a href="?action=show_add_form">Add Item</a></p>
-<p><a href="add_category_form.php">View/Edit Categories</a></p>
+<p><a href="?action=show_category_form">View/Edit Categories</a></p>
 </main>
 <?php include 'footer.php'; ?>
