@@ -40,20 +40,21 @@ tr {
     border-width: 1px 0;
 }
 
-td {
-    text-align: right;
+table td {
+    text-align: left;
     padding-top: 10px;
     padding-bottom: 10px;
     padding-left: 4px;
+    border: 1px solid black;
 }
 
 table td:first-child {
-    width: 90%;
+    width: 10%;
     text-align: left;
 }
 
 .additem {
-    padding-top: 30px;
+    padding-top: 5px;
 }
 
 .listlabel {

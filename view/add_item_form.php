@@ -22,7 +22,7 @@
                     <input type="text" id="newitems" name="description" placeholder="Description" required />
                 </div>
                 <label>&nbsp;</label>
-                <input type="submit" value="Add Item" />
+                <input class ="add" type="submit" value="Add Item" />
             </form>
             </div>
         </section>

@@ -31,7 +31,7 @@ if ($action == 'list_items') {
     $description = filter_input(INPUT_POST, "description", FILTER_SANITIZE_STRING);
     if ($category_id == NULL || $category_id == FALSE || $title == NULL || $description == NULL) {
         $error = "Invalid item inputs. Check all fields and try again.";
-        //include('./errors/error.php');
+        include('./view/error.php');
     } else {
         add_item($category_id, $title, $description);
         header("Location: .?category_id=&category_id");
@@ -43,7 +43,7 @@ if ($action == 'list_items') {
     $category_name = filter_input(INPUT_POST, 'category_name', FILTER_SANITIZE_STRING);
     if ($category_name == FALSE || $category_name == NULL) {
         $error = "Invalid category name. Please try again.";
-        //include('./errors/error.php');
+        include('./view/error.php');
     } else {
         add_category($category_name);
         header("Location: .?category_id=$category_id");

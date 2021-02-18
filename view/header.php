@@ -7,5 +7,5 @@
 
 <body>
 <header>
-    <h1>ToDo List</h1>
+    <h1 style="font-family: arial;">ToDo List</h1>
 </header>
