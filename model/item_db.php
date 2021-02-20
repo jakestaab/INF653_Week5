@@ -2,10 +2,18 @@
 
 function get_items_by_category($category_id) {
     global $db;
+    if ($category_id == NULL || $category_id == FALSE) {
+    $query = 'SELECT * FROM todoitems
+                INNER JOIN categories
+                ON todoitems.categoryID = categories.categoryID
+                ORDER BY categoryName ASC';
+    } else {
     $query = 'SELECT * FROM todoitems
                     INNER JOIN categories
                     ON todoitems.categoryID = categories.categoryID
-                    ORDER BY ItemNum ASC';
+                    WHERE todoitems.categoryID = :category_id
+                    ORDER BY categoryName ASC';
+    }
     $statement = $db->prepare($query);
     $statement->bindValue(':category_id', $category_id);
     $statement->execute();

@@ -11,13 +11,16 @@ if ($action == NULL) {
     }
 }
 
-if ($action == 'list_items') {
+if ($action == 'list_items') { //list_items
     $category_id = filter_input(INPUT_GET, 'category_id', FILTER_VALIDATE_INT);
     $category_name = get_category_name($category_id);
     $categories = get_categories();
     $items = get_items_by_category($category_id);
     include('view/item_list.php');
-} else if ($action == 'delete_item') {
+} else if ($action == 'select_category') { //select_category
+    $category_id = filter_input(INPUT_GET, 'category_id', FILTER_VALIDATE_INT);
+    header("Location: ?category_id=$category_id");
+} else if ($action == 'delete_item') { //delete_item
     $itemnum = filter_input(INPUT_POST, 'itemnum', FILTER_VALIDATE_INT);
     delete_item($itemnum);
     header("Location: .?category_id=$category_id");
@@ -25,7 +28,7 @@ if ($action == 'list_items') {
 } else if ($action == 'show_add_form') {
     $categories = get_categories();
     include('./view/add_item_form.php');
-} else if ($action == 'add_item') {
+} else if ($action == 'add_item') { //add_item
     $category_id = filter_input(INPUT_POST, 'category_id', FILTER_VALIDATE_INT);
     $title = filter_input(INPUT_POST, "title", FILTER_SANITIZE_STRING);
     $description = filter_input(INPUT_POST, "description", FILTER_SANITIZE_STRING);
@@ -34,7 +37,7 @@ if ($action == 'list_items') {
         include('./view/error.php');
     } else {
         add_item($category_id, $title, $description);
-        header("Location: .?category_id=&category_id");
+        header("Location: .");
     }
 } else if ($action == 'show_category_form') {
     $categories = get_categories();

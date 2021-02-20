@@ -1,10 +1,22 @@
 <?php include 'header.php'; ?>
 <main>
+    <form>
+        <input type="hidden" name="action" value="select_category">
+        <label>Category:</label>
+            <select name="category_id">
+                <option value="">None</option>
+                <?php foreach ($categories as $category) { ?>
+                    <option value="<?php echo $category['categoryID']; ?>">
+                        <?php echo $category['categoryName']; ?>
+                    </option>
+                <?php } ?>
+            </select>
+        <input class ="add" type="submit" value="Submit" />
+    </form>
 
 <?php if(!empty($items)) { ?>
     <section>
         <table>
-            
             <tr><div class="listlabel">ToDo List</div></tr>
             <tr>
                 <td>Title</td>
@@ -34,7 +46,6 @@
 <?php } else { ?>
     <p>There are no items on the ToDo List.</p>
 <?php } ?>
-
 <p><a href="?action=show_add_form">Add Item</a></p>
 <p><a href="?action=show_category_form">View/Edit Categories</a></p>
 </main>
