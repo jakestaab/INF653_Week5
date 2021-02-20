@@ -22,18 +22,21 @@
     </section>
     <br><br>
     <div class="tbl">
-    <h2>Add Category</h2>
-    <section>
-        <div class="additem">
-        <form action="index.php" method="POST">
-            <input type="hidden" name="action" value="add_category">
-
-            <label><div class="addlabel">Name</div></label>
-            <input type="text" id="category" name="category_name" required><br>
-            <button class="add">Add Category</button>
-        </form>
-        </div>
-    </section>
+    <div class="additem">
+        <h2>Add Category</h2>
+        <section>
+            <div class="additem">
+            <form action="index.php" method="POST">
+                <input type="hidden" name="action" value="add_category">
+                <div>
+                    <input type="text" id="category" name="category_name"
+                        placeholder="Category Name" required><br>
+                </div><br>
+                <button class="categoryButton">Add Category</button>
+            </form>
+            </div>
+        </section><br><br>
+    </div>
     </div>
     <div class="tbl">
     <p><a href="index.php">View ToDo List</a></p>
