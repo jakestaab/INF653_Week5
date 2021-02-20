@@ -6,7 +6,6 @@
             <div class="additem">
             <form action="index.php" method="POST">
                 <input type="hidden" name="action" value="add_item">
-
                 <label>Category:</label>
                 <select name="category_id">
                 <?php foreach ($categories as $category) { ?>

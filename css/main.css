@@ -3,19 +3,48 @@ main {
     font-family: arial;
 }
 
+header {
+    border-bottom: 3px solid black;
+    padding-left: 2%;
+}
+
+footer {
+    border-top: 3px solid black;
+    padding-left: 2%;
+}
+
 .delete {
-    font-style: bold;
-    font-size: 125%;
-    color: red;
-    padding: 6px;
-    border: none;
-    background: none;
+    background-color: rgb(221, 63, 0);
+    color: white;
+    height: 25px;
+    border-color:rgb(0, 0, 0);
+    border-radius: 4px;
+    box-shadow: 2px 2px rgb(156, 156, 156);
 }
 
 .add {
     background-color: rgb(44, 52, 168);
     color: white;
     height: 50px;
+}
+
+.categoryButton {
+    background-color: rgb(44, 52, 168);
+    color: white;
+    height: 25px;
+    border-color:rgb(0, 0, 0);
+    border-radius: 4px;
+    box-shadow: 2px 2px rgb(156, 156, 156);
+}
+
+.selectCategory {
+    padding-bottom: 15px;
+}
+
+.tableHeader {
+    font-weight: bold;
+    font-size: 125%;
+    color: rgb(44, 52, 168);
 }
 
 .title {
@@ -32,6 +61,22 @@ table {
     width: 75%;
     border: 1px solid black;
     border-collapse: collapse;
+}
+
+.categoryTable {
+    table-layout: fixed;
+    width: 35%;
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+.tbl {
+    padding-left: 2%;
+}
+
+.ctgtbl {
+    padding-left: 2%;
+    width: 75%;
 }
 
 tr {
