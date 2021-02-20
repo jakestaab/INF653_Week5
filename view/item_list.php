@@ -28,12 +28,18 @@
                 $itemnum = $item['ItemNum'];
                 $title = $item['Title'];
                 $description = $item['Description'];
-                $category = $item['categoryName'];
+                //$cg = $item['categoryID'];
+                if ($item['categoryName'] == NULL || $item['categoryName'] == FALSE) {
+                    $cg = 'None';
+                } else {
+                    $cg = $item['categoryName'];
+                }
             ?>
             <tr>
                 <td><?php echo $title; ?></td>
                 <td><?php echo $description; ?></td>
-                <td><?php echo $category; ?></td>
+                <td><?php echo $cg; ?></td>
+
                 <td><form action="." method="POST">
                     <input type="hidden" name="action" value="delete_item">
                     <input type="hidden" name="itemnum" value="<?php echo $itemnum ?>">

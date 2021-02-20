@@ -18,7 +18,7 @@ function get_category_name($category_id) {
     $statement = $db->prepare($query);
     $statement->bindValue(':category_id', $category_id);
     $statement->execute();
-    $category = $statement->fetchAll();
+    $category = $statement->fetch();
     $statement->closeCursor();
     return $category;
 }
