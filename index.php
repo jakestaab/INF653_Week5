@@ -42,17 +42,17 @@ if ($action == 'list_items') { //list_items
 } else if ($action == 'show_category_form') {
     $categories = get_categories();
     include('./view/category_list.php');
-} else if ($action == 'add_category') {
+} else if ($action == 'add_category') { //add_category
     $category_name = filter_input(INPUT_POST, 'category_name', FILTER_SANITIZE_STRING);
     if ($category_name == FALSE || $category_name == NULL) {
         $error = "Invalid category name. Please try again.";
         include('./view/error.php');
     } else {
         add_category($category_name);
-        header("Location: .?category_id=$category_id");
+        header("Location: .?action=show_category_form");
     }
-} else if ($action == 'delete_category') {
+} else if ($action == 'delete_category') { //delete_category
     $category_id = filter_input(INPUT_POST, 'category_id', FILTER_VALIDATE_INT);
     delete_category($category_id);
-    header("Location: .?category_id=$category_id");
+    header("Location: .?action=show_category_form");
 }

@@ -1,6 +1,5 @@
 <?php include 'header.php'; ?>
 <main>
-    
 <section>
     <div class="tbl">
         <table>
@@ -9,7 +8,7 @@
                     <input type="hidden" name="action" value="select_category">
                     <label>Category:</label>
                         <select name="category_id">
-                            <option value="">None</option>
+                            <option value="">View All</option>
                             <?php foreach ($categories as $category) { ?>
                                 <option value="<?php echo $category['categoryID']; ?>">
                                     <?php echo $category['categoryName']; ?>
@@ -20,7 +19,7 @@
                 </form>
             </div>
 
-        <?php if(!empty($items)) { ?>
+            <?php if(!empty($items)) { ?>
                 <tr class="tableHeader">
                     <td>Title</td>
                     <td>Description</td>
@@ -40,7 +39,6 @@
                 <td><?php echo $title; ?></td>
                 <td><?php echo $description; ?></td>
                 <td><?php echo $cg; ?></td>
-
                 <td>
                     <form action="." method="POST">
                         <input type="hidden" name="action" value="delete_item">

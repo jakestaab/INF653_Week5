@@ -6,7 +6,7 @@ function get_items_by_category($category_id) {
     $query = 'SELECT * FROM todoitems
                     LEFT JOIN categories
                     USING (categoryID)
-                    ORDER BY categoryID';
+                    ORDER BY categoryID DESC';
     } else {
     $query = 'SELECT * FROM todoitems
                     INNER JOIN categories
